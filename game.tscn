@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4g7wcpytcae7"]
+
+[ext_resource type="Texture2D" uid="uid://cjbwlovoxxyau" path="res://assets/field.svg" id="1_feb5d"]
+[ext_resource type="PackedScene" uid="uid://dyvhpsadvurir" path="res://sheep.tscn" id="3_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://baxuh582qqm46" path="res://dog.tscn" id="3_feb5d"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_feb5d"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Field" type="TextureRect" parent="."]
+texture_repeat = 2
+offset_right = 5000.0
+offset_bottom = 3000.0
+texture = ExtResource("1_feb5d")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="top" type="CollisionShape2D" parent="StaticBody2D"]
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_feb5d")
+
+[node name="bottom" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 3000)
+shape = SubResource("WorldBoundaryShape2D_feb5d")
+
+[node name="left" type="CollisionShape2D" parent="StaticBody2D"]
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_feb5d")
+
+[node name="right" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(5014, -5)
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_feb5d")
+
+[node name="dog" parent="." instance=ExtResource("3_feb5d")]
+unique_name_in_owner = true
+position = Vector2(500, 396)
+
+[node name="Camera2D" type="Camera2D" parent="dog"]
+limit_left = 0
+limit_top = 0
+limit_right = 5000
+limit_bottom = 3000
+
+[node name="sheep5" parent="." instance=ExtResource("3_fc0e3")]
+position = Vector2(1093, 420)
