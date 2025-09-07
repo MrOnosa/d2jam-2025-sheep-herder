@@ -37,16 +37,44 @@ shape = SubResource("WorldBoundaryShape2D_feb5d")
 
 [node name="dog" parent="." instance=ExtResource("3_feb5d")]
 unique_name_in_owner = true
-position = Vector2(500, 396)
+position = Vector2(2586, 1389)
 
 [node name="Camera2D" type="Camera2D" parent="dog"]
+zoom = Vector2(0.3, 0.3)
 limit_left = 0
 limit_top = 0
 limit_right = 5000
 limit_bottom = 3000
 
-[node name="sheep5" parent="." instance=ExtResource("3_fc0e3")]
-position = Vector2(1093, 420)
+[node name="leftsheep" parent="." instance=ExtResource("3_fc0e3")]
+position = Vector2(2147, 1933)
+
+[node name="rightsheep" parent="." instance=ExtResource("3_fc0e3")]
+position = Vector2(2347, 1933)
 
 [node name="sheep" parent="." instance=ExtResource("3_fc0e3")]
-position = Vector2(944, 585)
+position = Vector2(2254, 1808)
+
+[node name="leftsheep2" parent="." instance=ExtResource("3_fc0e3")]
+position = Vector2(3314, 2007)
+
+[node name="rightsheep2" parent="." instance=ExtResource("3_fc0e3")]
+position = Vector2(3514, 2007)
+
+[node name="sheep4" parent="." instance=ExtResource("3_fc0e3")]
+position = Vector2(3421, 1882)
+
+[node name="leftsheep3" parent="." instance=ExtResource("3_fc0e3")]
+position = Vector2(3489, 918)
+
+[node name="rightsheep3" parent="." instance=ExtResource("3_fc0e3")]
+position = Vector2(3689, 918)
+
+[node name="sheep5" parent="." instance=ExtResource("3_fc0e3")]
+position = Vector2(3596, 793)
+
+[node name="sheep2" parent="." instance=ExtResource("3_fc0e3")]
+position = Vector2(2205, 1161)
+
+[node name="sheep3" parent="." instance=ExtResource("3_fc0e3")]
+position = Vector2(3173, 1122)

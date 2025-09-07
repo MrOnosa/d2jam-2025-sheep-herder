@@ -7,11 +7,10 @@
 radius = 43.0
 height = 106.0
 
-[node name="sheep" type="RigidBody2D"]
+[node name="sheep" type="RigidBody2D" groups=["sheep"]]
 gravity_scale = 0.0
 can_sleep = false
 lock_rotation = true
-contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_xqjq8")
 

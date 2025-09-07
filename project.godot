@@ -15,6 +15,10 @@ run/main_scene="uid://b4g7wcpytcae7"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[global_group]
+
+sheep="🐑"
+
 [input]
 
 up={
