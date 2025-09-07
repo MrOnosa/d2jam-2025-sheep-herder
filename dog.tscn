@@ -11,7 +11,7 @@ height = 214.0
 motion_mode = 1
 script = ExtResource("1_kb3ao")
 
-[node name="Dog" type="Sprite2D" parent="."]
+[node name="DogSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_c5eso")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -111,7 +111,40 @@ limit_right = 5000
 limit_bottom = 3000
 
 [node name="leftsheep3" parent="." instance=ExtResource("3_fc0e3")]
-position = Vector2(1348, 670)
+position = Vector2(1673, 515)
+
+[node name="leftsheep4" parent="." instance=ExtResource("3_fc0e3")]
+position = Vector2(1176, 831)
+
+[node name="leftsheep5" parent="." instance=ExtResource("3_fc0e3")]
+position = Vector2(2268, 1105)
+
+[node name="leftsheep6" parent="." instance=ExtResource("3_fc0e3")]
+position = Vector2(2065, 1194)
+
+[node name="leftsheep7" parent="." instance=ExtResource("3_fc0e3")]
+position = Vector2(1977, 1858)
+
+[node name="leftsheep8" parent="." instance=ExtResource("3_fc0e3")]
+position = Vector2(2105, 1422)
+
+[node name="leftsheep9" parent="." instance=ExtResource("3_fc0e3")]
+position = Vector2(2819, 1253)
+
+[node name="leftsheep10" parent="." instance=ExtResource("3_fc0e3")]
+position = Vector2(2298, 1416)
+
+[node name="leftsheep11" parent="." instance=ExtResource("3_fc0e3")]
+position = Vector2(1576, 1698)
+
+[node name="leftsheep12" parent="." instance=ExtResource("3_fc0e3")]
+position = Vector2(1132, 1333)
+
+[node name="leftsheep13" parent="." instance=ExtResource("3_fc0e3")]
+position = Vector2(2504, 685)
+
+[node name="leftsheep14" parent="." instance=ExtResource("3_fc0e3")]
+position = Vector2(2332, 846)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(2815, 2144)

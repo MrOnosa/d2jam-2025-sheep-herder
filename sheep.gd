@@ -1,8 +1,8 @@
 extends RigidBody2D
 class_name Sheep
 
-const SPEED := 10000.0
-const SCARED_OF_DOG_SPEED := 20000.0
+const SPEED := 20000.0
+const SCARED_OF_DOG_SPEED := 30000.0
 const run_doggy_logic := true
 const run_sheep_herding_mentality_logic := true
 
