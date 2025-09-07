@@ -6,8 +6,6 @@ const SCARED_OF_DOG_SPEED := 20000.0
 const run_doggy_logic := true
 const run_sheep_herding_mentality_logic := true
 
-
-
 var gathered := false
 var linear_velocity_force := Vector2.ZERO
 

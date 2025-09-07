@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://b4g7wcpytcae7"]
+[gd_scene load_steps=13 format=3 uid="uid://b4g7wcpytcae7"]
 
 [ext_resource type="Texture2D" uid="uid://cjbwlovoxxyau" path="res://assets/field.svg" id="1_feb5d"]
 [ext_resource type="Script" uid="uid://cl4jh4fvwgftq" path="res://game.gd" id="1_ryrav"]
+[ext_resource type="Texture2D" uid="uid://b2sntryngbur8" path="res://assets/restart.svg" id="2_eow3j"]
 [ext_resource type="PackedScene" uid="uid://dyvhpsadvurir" path="res://sheep.tscn" id="3_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://baxuh582qqm46" path="res://dog.tscn" id="3_feb5d"]
 [ext_resource type="Texture2D" uid="uid://c48h1tvqb2m88" path="res://assets/fence-left.svg" id="4_7jktm"]
@@ -23,6 +24,27 @@ size = Vector2(200, 2400)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ryrav")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Timer" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 66.0
+offset_top = 55.0
+offset_right = 1362.0
+offset_bottom = 322.0
+theme_override_font_sizes/font_size = 96
+text = "Gather the sheep in the pen"
+
+[node name="RestartButton" type="TextureButton" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 42.0
+offset_top = 653.0
+offset_right = 465.0
+offset_bottom = 1076.0
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(0, 423)
+texture_normal = ExtResource("2_eow3j")
 
 [node name="Field" type="TextureRect" parent="."]
 texture_repeat = 2
@@ -88,23 +110,8 @@ limit_top = 0
 limit_right = 5000
 limit_bottom = 3000
 
-[node name="leftsheep" parent="." instance=ExtResource("3_fc0e3")]
-position = Vector2(1550, 127)
-
-[node name="leftsheep2" parent="." instance=ExtResource("3_fc0e3")]
-position = Vector2(916, 1161)
-
-[node name="rightsheep" parent="." instance=ExtResource("3_fc0e3")]
-position = Vector2(1750, 127)
-
 [node name="leftsheep3" parent="." instance=ExtResource("3_fc0e3")]
-position = Vector2(1550, 127)
-
-[node name="leftsheep4" parent="." instance=ExtResource("3_fc0e3")]
-position = Vector2(916, 1161)
-
-[node name="rightsheep2" parent="." instance=ExtResource("3_fc0e3")]
-position = Vector2(1750, 127)
+position = Vector2(1348, 670)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(2815, 2144)
@@ -131,6 +138,7 @@ texture = ExtResource("4_7jktm")
 position = Vector2(216, 51)
 texture = ExtResource("5_ryrav")
 
+[connection signal="pressed" from="CanvasLayer/RestartButton" to="." method="_on_texture_button_pressed"]
 [connection signal="body_entered" from="StaticBody2D/TopPUUUUUUUSHArea2D" to="." method="_on_top_puuuuuuush_area_2d_body_entered"]
 [connection signal="body_exited" from="StaticBody2D/TopPUUUUUUUSHArea2D" to="." method="_on_edge_puuuuuuush_area_2d_body_exited"]
 [connection signal="body_entered" from="StaticBody2D/BottomPUUUUUUUSHArea2D2" to="." method="_on_bottom_puuuuuuush_area_2d_2_body_entered"]
