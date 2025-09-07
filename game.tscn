@@ -1,14 +1,28 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4g7wcpytcae7"]
+[gd_scene load_steps=12 format=3 uid="uid://b4g7wcpytcae7"]
 
 [ext_resource type="Texture2D" uid="uid://cjbwlovoxxyau" path="res://assets/field.svg" id="1_feb5d"]
+[ext_resource type="Script" uid="uid://cl4jh4fvwgftq" path="res://game.gd" id="1_ryrav"]
 [ext_resource type="PackedScene" uid="uid://dyvhpsadvurir" path="res://sheep.tscn" id="3_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://baxuh582qqm46" path="res://dog.tscn" id="3_feb5d"]
 [ext_resource type="Texture2D" uid="uid://c48h1tvqb2m88" path="res://assets/fence-left.svg" id="4_7jktm"]
 [ext_resource type="Texture2D" uid="uid://ejq511bj87w1" path="res://assets/fence-front.svg" id="5_ryrav"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryrav"]
+size = Vector2(5000, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vef74"]
+size = Vector2(5000, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eow3j"]
+size = Vector2(200, 2400)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5wjh"]
+size = Vector2(200, 2400)
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_feb5d"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_ryrav")
 
 [node name="Field" type="TextureRect" parent="."]
 texture_repeat = 2
@@ -19,6 +33,32 @@ stretch_mode = 1
 metadata/_edit_lock_ = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="TopPUUUUUUUSHArea2D" type="Area2D" parent="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/TopPUUUUUUUSHArea2D"]
+position = Vector2(2500, 100)
+shape = SubResource("RectangleShape2D_ryrav")
+
+[node name="BottomPUUUUUUUSHArea2D2" type="Area2D" parent="StaticBody2D"]
+position = Vector2(0, 2800)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/BottomPUUUUUUUSHArea2D2"]
+position = Vector2(2500, 100)
+shape = SubResource("RectangleShape2D_vef74")
+
+[node name="LeftPUUUUUUUSHArea2D2" type="Area2D" parent="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/LeftPUUUUUUUSHArea2D2"]
+position = Vector2(100, 1500)
+shape = SubResource("RectangleShape2D_eow3j")
+
+[node name="RightPUUUUUUUSHArea2D3" type="Area2D" parent="StaticBody2D"]
+position = Vector2(4800, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/RightPUUUUUUUSHArea2D3"]
+position = Vector2(100, 1500)
+shape = SubResource("RectangleShape2D_j5wjh")
 
 [node name="top" type="CollisionShape2D" parent="StaticBody2D"]
 rotation = 3.14159
@@ -39,23 +79,32 @@ shape = SubResource("WorldBoundaryShape2D_feb5d")
 
 [node name="dog" parent="." instance=ExtResource("3_feb5d")]
 unique_name_in_owner = true
-position = Vector2(2586, 1389)
+position = Vector2(1745, 920)
 
 [node name="Camera2D" type="Camera2D" parent="dog"]
-zoom = Vector2(0.3, 0.3)
+zoom = Vector2(0.5, 0.5)
 limit_left = 0
 limit_top = 0
 limit_right = 5000
 limit_bottom = 3000
 
 [node name="leftsheep" parent="." instance=ExtResource("3_fc0e3")]
-position = Vector2(2147, 1933)
+position = Vector2(1550, 127)
 
 [node name="leftsheep2" parent="." instance=ExtResource("3_fc0e3")]
 position = Vector2(916, 1161)
 
 [node name="rightsheep" parent="." instance=ExtResource("3_fc0e3")]
-position = Vector2(2347, 1933)
+position = Vector2(1750, 127)
+
+[node name="leftsheep3" parent="." instance=ExtResource("3_fc0e3")]
+position = Vector2(1550, 127)
+
+[node name="leftsheep4" parent="." instance=ExtResource("3_fc0e3")]
+position = Vector2(916, 1161)
+
+[node name="rightsheep2" parent="." instance=ExtResource("3_fc0e3")]
+position = Vector2(1750, 127)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(2815, 2144)
@@ -81,3 +130,13 @@ texture = ExtResource("4_7jktm")
 [node name="Fence-front" type="Sprite2D" parent="Area2D"]
 position = Vector2(216, 51)
 texture = ExtResource("5_ryrav")
+
+[connection signal="body_entered" from="StaticBody2D/TopPUUUUUUUSHArea2D" to="." method="_on_top_puuuuuuush_area_2d_body_entered"]
+[connection signal="body_exited" from="StaticBody2D/TopPUUUUUUUSHArea2D" to="." method="_on_edge_puuuuuuush_area_2d_body_exited"]
+[connection signal="body_entered" from="StaticBody2D/BottomPUUUUUUUSHArea2D2" to="." method="_on_bottom_puuuuuuush_area_2d_2_body_entered"]
+[connection signal="body_exited" from="StaticBody2D/BottomPUUUUUUUSHArea2D2" to="." method="_on_edge_puuuuuuush_area_2d_body_exited"]
+[connection signal="body_entered" from="StaticBody2D/LeftPUUUUUUUSHArea2D2" to="." method="_on_left_puuuuuuush_area_2d_2_body_entered"]
+[connection signal="body_exited" from="StaticBody2D/LeftPUUUUUUUSHArea2D2" to="." method="_on_edge_puuuuuuush_area_2d_body_exited"]
+[connection signal="body_entered" from="StaticBody2D/RightPUUUUUUUSHArea2D3" to="." method="_on_right_puuuuuuush_area_2d_3_body_entered"]
+[connection signal="body_exited" from="StaticBody2D/RightPUUUUUUUSHArea2D3" to="." method="_on_edge_puuuuuuush_area_2d_body_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

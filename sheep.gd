@@ -1,12 +1,15 @@
 extends RigidBody2D
-
+class_name Sheep
 
 const SPEED := 10000.0
 const SCARED_OF_DOG_SPEED := 20000.0
 const run_doggy_logic := true
 const run_sheep_herding_mentality_logic := true
 
-var total_other_sheep := 1
+
+
+var gathered := false
+var linear_velocity_force := Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -43,4 +46,11 @@ func _process(delta: float) -> void:
 			force += (influcence)/(all_sheep.size()-1)
 		sheep_linear_velocity = force
 	
-	linear_velocity = doggy_linear_velocity + sheep_linear_velocity
+	linear_velocity = doggy_linear_velocity + sheep_linear_velocity + linear_velocity_force
+
+func run_gathered_logic() -> void:
+	gathered = true
+	%AnimationPlayer.play("fade_away")
+	
+func fade_out_complete() -> void:
+	queue_free()
