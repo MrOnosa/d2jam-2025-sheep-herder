@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4g7wcpytcae7"]
+[gd_scene load_steps=7 format=3 uid="uid://b4g7wcpytcae7"]
 
 [ext_resource type="Texture2D" uid="uid://cjbwlovoxxyau" path="res://assets/field.svg" id="1_feb5d"]
 [ext_resource type="PackedScene" uid="uid://dyvhpsadvurir" path="res://sheep.tscn" id="3_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://baxuh582qqm46" path="res://dog.tscn" id="3_feb5d"]
+[ext_resource type="Texture2D" uid="uid://c48h1tvqb2m88" path="res://assets/fence-left.svg" id="4_7jktm"]
+[ext_resource type="Texture2D" uid="uid://ejq511bj87w1" path="res://assets/fence-front.svg" id="5_ryrav"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_feb5d"]
 
@@ -49,32 +51,33 @@ limit_bottom = 3000
 [node name="leftsheep" parent="." instance=ExtResource("3_fc0e3")]
 position = Vector2(2147, 1933)
 
+[node name="leftsheep2" parent="." instance=ExtResource("3_fc0e3")]
+position = Vector2(916, 1161)
+
 [node name="rightsheep" parent="." instance=ExtResource("3_fc0e3")]
 position = Vector2(2347, 1933)
 
-[node name="sheep" parent="." instance=ExtResource("3_fc0e3")]
-position = Vector2(2254, 1808)
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(2815, 2144)
 
-[node name="leftsheep2" parent="." instance=ExtResource("3_fc0e3")]
-position = Vector2(3314, 2007)
+[node name="GoalCollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-45, -154, 489, -155, 408, 191, 42, 191)
 
-[node name="rightsheep2" parent="." instance=ExtResource("3_fc0e3")]
-position = Vector2(3514, 2007)
+[node name="StaticBody2D" type="StaticBody2D" parent="Area2D"]
 
-[node name="sheep4" parent="." instance=ExtResource("3_fc0e3")]
-position = Vector2(3421, 1882)
+[node name="ObsticleCollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D/StaticBody2D"]
+polygon = PackedVector2Array(-84, 105, 31, 236, 400, 236, 518, 105, 517, -157, 486, -193, 388, 179, 63, 186, -46, -195, -81, -157)
 
-[node name="leftsheep3" parent="." instance=ExtResource("3_fc0e3")]
-position = Vector2(3489, 918)
+[node name="Fence-left" type="Sprite2D" parent="Area2D"]
+position = Vector2(-10, -13)
+texture = ExtResource("4_7jktm")
 
-[node name="rightsheep3" parent="." instance=ExtResource("3_fc0e3")]
-position = Vector2(3689, 918)
+[node name="Fence-left2" type="Sprite2D" parent="Area2D"]
+position = Vector2(443, -9)
+rotation = -3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("4_7jktm")
 
-[node name="sheep5" parent="." instance=ExtResource("3_fc0e3")]
-position = Vector2(3596, 793)
-
-[node name="sheep2" parent="." instance=ExtResource("3_fc0e3")]
-position = Vector2(2205, 1161)
-
-[node name="sheep3" parent="." instance=ExtResource("3_fc0e3")]
-position = Vector2(3173, 1122)
+[node name="Fence-front" type="Sprite2D" parent="Area2D"]
+position = Vector2(216, 51)
+texture = ExtResource("5_ryrav")
