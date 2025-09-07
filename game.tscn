@@ -47,3 +47,6 @@ limit_bottom = 3000
 
 [node name="sheep5" parent="." instance=ExtResource("3_fc0e3")]
 position = Vector2(1093, 420)
+
+[node name="sheep" parent="." instance=ExtResource("3_fc0e3")]
+position = Vector2(944, 585)
