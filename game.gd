@@ -12,6 +12,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	if Input.is_action_just_pressed("restart"):
+		_on_texture_button_pressed()
 		
 	if %dog.has_ever_moved:
 		if !unfroze_sheep:
