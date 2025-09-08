@@ -9,7 +9,7 @@ length = 1.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sheep:self_modulate")
+tracks/0/path = NodePath("SheepSprite:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -38,7 +38,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sheep:self_modulate")
+tracks/0/path = NodePath("SheepSprite:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -71,7 +71,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_y540r")
 }
 
-[node name="Sheep" type="Sprite2D" parent="."]
+[node name="SheepSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_0sl4e")
 

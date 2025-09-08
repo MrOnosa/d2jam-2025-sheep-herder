@@ -45,6 +45,11 @@ func _process(delta: float) -> void:
 		sheep_linear_velocity = force
 	
 	linear_velocity = doggy_linear_velocity + sheep_linear_velocity + linear_velocity_force
+	
+	if linear_velocity.x < 0:
+		$SheepSprite.scale = Vector2(-1,1)
+	else:
+		$SheepSprite.scale = Vector2(1, 1)
 
 func run_gathered_logic() -> void:
 	gathered = true

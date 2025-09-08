@@ -36,6 +36,16 @@ offset_bottom = 322.0
 theme_override_font_sizes/font_size = 96
 text = "Gather the sheep in the pen"
 
+[node name="Credits" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 1691.0
+offset_top = 1001.0
+offset_right = 2987.0
+offset_bottom = 1268.0
+text = "By: Captain_Onosa for D2Jam 
+Engine: Godot
+Font:  Open Sans SemiBold"
+
 [node name="RestartButton" type="TextureButton" parent="CanvasLayer"]
 unique_name_in_owner = true
 offset_left = 42.0
